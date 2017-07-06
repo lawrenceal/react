@@ -6,9 +6,9 @@ class App extends React.Component{
         return (
             <div>
                 <ul className="url-list">
-                    <li><Link to="/">首页</Link></li>
-                    <li><Link to="/simpleComponent">简单组件</Link></li>
-                    <li><Link to="/inheritComponent">继承组件</Link></li>
+                    <li><Link to="/">index</Link></li>
+                    <li><Link to="/simpleComponent">simple component</Link></li>
+                    <li><Link to="/inheritComponent">inherit component</Link></li>
                     <li><Link to="/state">state</Link></li>
                     <li><Link to="/ref">ref</Link></li>
                     <li><Link to="/componentLifecycle">ComponentLifecycle</Link></li>

@@ -13,6 +13,7 @@ import AsyncComponent from './asyncCompnent';
 import HigherOrder from './higherOrderComponentBas';
 import UrlParam from './urlParam';
 import InnerRouter from './innerRouter';
+import ProductFilter from './productFilter';
 import './style/index.css';
 
 let names = ['lawrence', 'kitty', 'tom'];
@@ -33,7 +34,7 @@ const InheritComponent = () => (<HelloWorld name="larry"/>);
 render(
     (<Router>
         <App>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={ Home }/>
             <Route path="/simpleComponent" component={ SimpleComponent }/>
             <Route path="/inheritComponent" component={ InheritComponent }/>
             <Route path="/state" component={ State }/>
@@ -44,6 +45,7 @@ render(
             <Route path="/higherOrder" component={ HigherOrder }/>
             <Route path="/urlParam/:id" component={ UrlParam }/>
             <Route path="/innerRoute" component={ InnerRouter }/>
+            <Route path="/productFilter" component={ ProductFilter }/>
         </App>
     </Router>),
     document.getElementById('root')

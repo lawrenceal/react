@@ -18,6 +18,7 @@ class App extends React.Component{
                     <li><Link to="/urlParam/1">UrlParam</Link></li>
                     <li><Link to="/innerRoute">Inner Route</Link></li>
                     <li><Link to="/productFilter">product filter</Link></li>
+                    <li><Link to="/form">form</Link></li>
                 </ul>
                 { this.props.children }
             </div>

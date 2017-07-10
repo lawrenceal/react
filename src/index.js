@@ -14,6 +14,7 @@ import HigherOrder from './higherOrderComponentBas';
 import UrlParam from './urlParam';
 import InnerRouter from './innerRouter';
 import ProductFilter from './productFilter';
+import Form from './form';
 import './style/index.css';
 
 let names = ['lawrence', 'kitty', 'tom'];
@@ -46,6 +47,7 @@ render(
             <Route path="/urlParam/:id" component={ UrlParam }/>
             <Route path="/innerRoute" component={ InnerRouter }/>
             <Route path="/productFilter" component={ ProductFilter }/>
+            <Route path="/form" component={ Form }/>
         </App>
     </Router>),
     document.getElementById('root')

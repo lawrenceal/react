@@ -1,66 +1,59 @@
 import React, { Component } from 'react';
 import './style/productFilter.css';
+import FancyCheckbox from './fancyCheckbox';
+const ProductCategoryRow = (props) => {
+    return (
+        <tr><th colSpan="2">{props.category}</th></tr>
+    );
+};
 
-class ProductCategoryRow extends Component{
+const ProductRow = (props) => {
+    let { name, price, stocked } = props.product;
+    name = stocked ? <span style={ { color: 'red' } }>{ name }</span> : name;
+    return(
+        <tr>
+            <td>{ name }</td>
+            <td>{ price }</td>
+        </tr>
+    );
+};
 
-    render(){
-        return (
-            <tr><th colSpan="2">{this.props.category}</th></tr>
-        );
-    }
-}
+const ProductTable = (props) => {
 
-class ProductRow extends Component{
+    let rows = [],
+        lastCategory = null,
+        category = null,
+        name = '',
+        { products, filterText, inStockOnly} = props;
 
-    render(){
-        let { name, price, stocked } = this.props.product;
-        name = stocked ? <span style={ { color: 'red' } }>{ name }</span> : name;
-        return(
-            <tr>
-                <td>{ name }</td>
-                <td>{ price }</td>
-            </tr>
-        );
-    }
-}
+    products.forEach((item) => {
+        name = item.name;
+        category = item.category;
 
-class ProductTable extends Component{
+        if(!name.toLowerCase().includes(filterText.toLowerCase()) || (!item.stocked && inStockOnly)){
+            return;
+        }
 
-    render(){
-        let rows = [],
-            lastCategory = null,
-            category = null,
-            name = '',
-            { products, filterText, inStockOnly} = this.props;
+        if(category !== lastCategory){
+            rows.push(<ProductCategoryRow category={category} key={category}/>);
+            lastCategory = category;
+        }
 
-        products.forEach((item) => {
-            name = item.name;
-            category = item.category;
+        rows.push(<ProductRow product={item} key={name}/>);
+    });
 
-            if(!name.toLowerCase().includes(filterText.toLowerCase()) || (!item.stocked && inStockOnly)){
-                return;
-            }
+    return (
+        <table>
+            <thead>
+            <tr><th>name</th><th>price</th></tr>
+            </thead>
+            <tbody>
+            { rows }
+            </tbody>
+        </table>
+    );
+};
 
-            if(category !== lastCategory){
-                rows.push(<ProductCategoryRow category={category} key={category}/>);
-                lastCategory = category;
-            }
-
-            rows.push(<ProductRow product={item} key={name}/>);
-        });
-
-        return (
-            <table>
-                <thead>
-                    <tr><th>name</th><th>price</th></tr>
-                </thead>
-                <tbody>
-                    { rows }
-                </tbody>
-            </table>
-        );
-    }
-}
 
 class SearchBar extends Component{
 
@@ -86,6 +79,9 @@ class SearchBar extends Component{
         );
     }
 }
+/*SearchBar.defaultProps = { filterText: 0};
+SearchBar.propTypes = {filterText: React.PropTypes.number};*/
+
 
 let PRODUCTS = [
     {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
@@ -122,6 +118,9 @@ class FilterableProductTable extends Component{
                     filterText={ this.state.filterText }
                     inStockOnly={ this.state.inStockOnly }
                 />
+                <FancyCheckbox checked={true} onClick={console.log.bind(console)} className="class">
+                    Hello world!
+                </FancyCheckbox>
             </div>
         );
     }

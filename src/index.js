@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 //HashRouter
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import App from './app';
 import HelloWorldSimple from "./componentSimple";
 import HelloWorld from "./component";
@@ -16,6 +16,7 @@ import InnerRouter from './innerRouter';
 import ProductFilter from './productFilter';
 import Form from './form';
 import Auth from './auth';
+import RouterSwitch from './routerSwitch';
 import './style/index.css';
 
 let names = ['lawrence', 'kitty', 'tom'];
@@ -36,20 +37,24 @@ const InheritComponent = () => (<HelloWorld name="larry"/>);
 render(
     (<Router>
         <App>
-            <Route exact path="/" component={ Home }/>
-            <Route path="/simpleComponent" component={ SimpleComponent }/>
-            <Route path="/inheritComponent" component={ InheritComponent }/>
-            <Route path="/state" component={ State }/>
-            <Route path="/ref" component={ Ref }/>
-            <Route path="/componentLifecycle" component={ ComponentLifecycle }/>
-            <Route path="/componentInteract" component={ ComponentInteract }/>
-            <Route path="/asyncComponent" component={ AsyncComponent }/>
-            <Route path="/higherOrder" component={ HigherOrder }/>
-            <Route path="/productFilter" component={ ProductFilter }/>
-            <Route path="/form" component={ Form }/>
-            <Route path="/urlParam/:id" component={ UrlParam }/>
-            <Route path="/innerRoute" component={ InnerRouter }/>
-            <Route path="/auth" component={ Auth }/>
+            <Switch>
+                <Route exact path="/" component={ Home }/>
+                <Route path="/simpleComponent" component={ SimpleComponent }/>
+                <Route path="/inheritComponent" component={ InheritComponent }/>
+                <Route path="/state" component={ State }/>
+                <Route path="/ref" component={ Ref }/>
+                <Route path="/componentLifecycle" component={ ComponentLifecycle }/>
+                <Route path="/componentInteract" component={ ComponentInteract }/>
+                <Route path="/asyncComponent" component={ AsyncComponent }/>
+                <Route path="/higherOrder" component={ HigherOrder }/>
+                <Route path="/productFilter" component={ ProductFilter }/>
+                <Route path="/form" component={ Form }/>
+                <Route path="/urlParam/:id" component={ UrlParam }/>
+                <Route path="/innerRoute" component={ InnerRouter }/>
+                <Route path="/auth" component={ Auth }/>
+                <Route path="/routerSwitch" component={ RouterSwitch }/>
+                <Route render={ ({location}) => (<h3>404-无法匹配到路径{location.pathname}</h3>)}/>
+            </Switch>
         </App>
     </Router>),
     document.getElementById('root')

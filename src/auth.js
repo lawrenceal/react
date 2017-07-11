@@ -105,12 +105,20 @@ class Login extends React.Component{
     }
 }
 
+const CustomMenuLink = ({ to, label, exact }) => (
+    <Route path={to} exact={exact} children={ ({ match }) => (
+        <li className={ match ? 'current' : '' }>
+            <Link to={to}>{label}</Link>
+        </li>
+    )}/>
+);
+
 const Auth = () =>  (
     <div className="auth">
         <LoginRegister/>
-        <ul>
-            <li><Link to="/auth/product">产品列表</Link></li>
-            <li><Link to="/auth/account">个人中心</Link></li>
+        <ul className="menu">
+            <CustomMenuLink to="/auth/product" label="产品列表"/>
+            <CustomMenuLink to="/auth/account" label="个人中心"/>
         </ul>
         <div className="auth-container">
             <Route path="/auth/product" component={Product}/>

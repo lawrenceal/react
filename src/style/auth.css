@@ -21,3 +21,7 @@ h5{
     display: inline-block;
     margin-left: 20px;
 }
+
+.menu .current a{
+    color: red;;
+}

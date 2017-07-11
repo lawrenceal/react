@@ -15,6 +15,7 @@ import UrlParam from './urlParam';
 import InnerRouter from './innerRouter';
 import ProductFilter from './productFilter';
 import Form from './form';
+import Auth from './auth';
 import './style/index.css';
 
 let names = ['lawrence', 'kitty', 'tom'];
@@ -44,10 +45,11 @@ render(
             <Route path="/componentInteract" component={ ComponentInteract }/>
             <Route path="/asyncComponent" component={ AsyncComponent }/>
             <Route path="/higherOrder" component={ HigherOrder }/>
-            <Route path="/urlParam/:id" component={ UrlParam }/>
-            <Route path="/innerRoute" component={ InnerRouter }/>
             <Route path="/productFilter" component={ ProductFilter }/>
             <Route path="/form" component={ Form }/>
+            <Route path="/urlParam/:id" component={ UrlParam }/>
+            <Route path="/innerRoute" component={ InnerRouter }/>
+            <Route path="/auth" component={ Auth }/>
         </App>
     </Router>),
     document.getElementById('root')

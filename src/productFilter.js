@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style/productFilter.css';
 import FancyCheckbox from './fancyCheckbox';
+
 const ProductCategoryRow = (props) => {
     return (
         <tr><th colSpan="2">{props.category}</th></tr>
@@ -58,7 +59,7 @@ const ProductTable = (props) => {
 class SearchBar extends Component{
 
     /*changeHandler(){
-        console.log(this);// TODO this代表实例 undefined
+        console.log(this);// TODO this undefined
     }*/
 
     changeHandler = () => {

@@ -1,19 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 const App = (props) => {
     return (
         <div>
             <ul className="url-list">
-                <li><Link to="/">index</Link></li>
-                <li><Link to="/simpleComponent">simple component</Link></li>
-                <li><Link to="/inheritComponent">inherit component</Link></li>
-                <li><Link to="/state">state</Link></li>
-                <li><Link to="/ref">ref</Link></li>
-                <li><Link to="/componentLifecycle">ComponentLifecycle</Link></li>
-                <li><Link to="/componentInteract">ComponentInteract</Link></li>
-                <li><Link to="/asyncComponent">AsyncComponent</Link></li>
-                <li><Link to="/higherOrder">HigherOrder</Link></li>
+                <li><NavLink to="/" activeClassName="selected" exact >index</NavLink></li>
+                <li><NavLink to="/simpleComponent" activeClassName="selected">simple component</NavLink></li>
+                <li><NavLink to="/inheritComponent" activeClassName="selected">inherit component</NavLink></li>
+                <li><NavLink to="/state" activeClassName="selected">state</NavLink></li>
+                <li><NavLink to="/ref" activeClassName="selected">ref</NavLink></li>
+                <li><NavLink to="/componentLifecycle" activeClassName="selected">ComponentLifecycle</NavLink></li>
+                <li><NavLink to="/componentInteract" activeClassName="selected">ComponentInteract</NavLink></li>
+                <li><NavLink to="/asyncComponent" activeClassName="selected">AsyncComponent</NavLink></li>
+                <li><NavLink to="/higherOrder" activeClassName="selected">HigherOrder</NavLink></li>
                 <li><Link to="/productFilter">product filter</Link></li>
                 <li><Link to="/form">form</Link></li>
                 <li>

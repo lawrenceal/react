@@ -17,10 +17,11 @@ import ProductFilter from './productFilter';
 import Form from './form';
 import Auth from './auth';
 import RouterSwitch from './routerSwitch';
+import RouterConfig from './routerConfig';
 import './style/index.css';
 
 let names = ['lawrence', 'kitty', 'tom'];
-let arrElement = [<h1 key={1}>First React APP</h1>, <h2 key={2}>hello world</h2>];
+let arrElement = [ <h1 key={1}>First React APP</h1>, <h2 key={2}>hello world</h2> ];
 
 const Home = () => (
     <div>
@@ -35,7 +36,7 @@ const SimpleComponent = () => (<HelloWorldSimple name="slice" />);
 const InheritComponent = () => (<HelloWorld name="larry"/>);
 
 render(
-    (<Router>
+    (<Router basename="/react" keyLength={12}>
         <App>
             <Switch>
                 <Route exact path="/" component={ Home }/>
@@ -53,6 +54,7 @@ render(
                 <Route path="/innerRoute" component={ InnerRouter }/>
                 <Route path="/auth" component={ Auth }/>
                 <Route path="/routerSwitch" component={ RouterSwitch }/>
+                <Route path="/routerConfig" component={ RouterConfig }/>
                 <Route render={ ({location}) => (<h3>404-无法匹配到路径{location.pathname}</h3>)}/>
             </Switch>
         </App>

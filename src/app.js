@@ -27,6 +27,9 @@ const App = (props) => {
                     <ul>
                         <li><Link to="/routerSwitch">switch => 404</Link></li>
                     </ul>
+                    <ul>
+                        <li><Link to="/routerConfig">router config</Link></li>
+                    </ul>
                 </li>
             </ul>
             { props.children }

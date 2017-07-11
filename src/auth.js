@@ -22,7 +22,9 @@ const LoginRegister = withRouter(({ history }) => (
             欢迎您，{sessionStorage.getItem('username')}
             <button className="sign-out" onClick={() => {
                 auth.signOut(() => {
-                    sessionStorage.removeItem('username') ;
+                    sessionStorage.removeItem('username');
+
+                    //js跳转路径
                     history.push('/auth/product');
                 })
             }}>退出</button>

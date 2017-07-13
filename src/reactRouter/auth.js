@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link, withRouter, Redirect } from 'react-router-dom'
-import './style/auth.css';
+import '../style/auth.css';
 
 const auth = {
     isAuthenticated: false,

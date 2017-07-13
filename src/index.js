@@ -11,13 +11,13 @@ import ComponentLifecycle from './componentLifecycle';
 import ComponentInteract from './componentInteractParent';
 import AsyncComponent from './asyncCompnent';
 import HigherOrder from './higherOrderComponentBas';
-import UrlParam from './urlParam';
-import InnerRouter from './innerRouter';
+import UrlParam from './reactRouter/urlParam';
+import InnerRouter from './reactRouter/innerRouter';
 import ProductFilter from './productFilter';
 import Form from './form';
-import Auth from './auth';
-import RouterSwitch from './routerSwitch';
-import RouterConfig from './routerConfig';
+import Auth from './reactRouter/auth';
+import RouterSwitch from './reactRouter/routerSwitch';
+import RouterConfig from './reactRouter/routerConfig';
 import './style/index.css';
 
 let names = ['lawrence', 'kitty', 'tom'];

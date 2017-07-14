@@ -25,7 +25,7 @@ const ProductTable = (props) => {
         lastCategory = null,
         category = null,
         name = '',
-        { products, filterText, inStockOnly} = props;
+        { products, filterText, inStockOnly } = props;
 
     products.forEach((item) => {
         name = item.name;
@@ -54,7 +54,6 @@ const ProductTable = (props) => {
         </table>
     );
 };
-
 
 class SearchBar extends Component{
 

@@ -24,7 +24,7 @@ class LifeCycle extends Component {
         console.log(nextProps);
         console.log(nextState);
         console.log('should component update');
-        return true;
+        return false;
     }
 
     componentWillUpdate(){

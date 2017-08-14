@@ -16,13 +16,24 @@ class LifeCycle extends Component {
         console.log(this.refs);
     }
 
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps);
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        console.log(nextProps);
+        console.log(nextState);
+        console.log('should component update');
+        return true;
+    }
+
     componentWillUpdate(){
         console.log('will update');
         console.log(this.refs);
     }
 
     componentDidUpdate(){
-        console.log('will mount');
+        console.log('did update');
         console.log(this.refs);
     }
 

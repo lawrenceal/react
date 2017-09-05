@@ -18,13 +18,14 @@ class LifeCycle extends Component {
 
     componentWillReceiveProps(nextProps){
         console.log(nextProps);
+        console.log('componentWillReceiveProps');
     }
 
     shouldComponentUpdate(nextProps, nextState){
         console.log(nextProps);
         console.log(nextState);
         console.log('should component update');
-        return false;
+        return true;
     }
 
     componentWillUpdate(){
